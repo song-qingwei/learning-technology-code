@@ -1,0 +1,7 @@
+spring:
+  mail:
+    host: mail.oristartech.com # smtp.qq.com
+    username: laser@oristartech.com # 893577263@qq.com
+    password: laser@123 # iwyowswlhpbzbchi
+    properties:
+      mail.smtp.ssl.enable: true
