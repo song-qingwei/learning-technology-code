@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>首页</title>
+</head>
+<body>
+	<!--匿名-->
+	<div sec:authorize="isAnonymous()">
+		未登录，点击 <a th:href="@{/login}">登录</a>
+	</div>
+	<!--登录-->
+	<div sec:authorize="isAuthenticated()">
+		<p>已登录  <a th:href="@{/logout}">退出</a></p>
+		<p>
+			登录名：<span sec:authentication="name"></span>
+		</p>
+		<p>
+			角色：<span sec:authentication="principal.authorities"></span>
+		</p>
+		<p>
+			Username：<span sec:authentication="principal.username"></span>
+		</p>
+		<p sec:authorize="hasRole('ROLE_ADD')">
+			<a th:href="@{/add}">添加</a>
+		</p>
+		<p sec:authorize="hasRole('ROLE_UPDATE')">
+			<a th:href="@{/update}">编辑</a>
+		</p>
+		<p sec:authorize="hasRole('ROLE_DEL')">
+			<a th:href="@{/delete}">删除</a>
+		</p>
+	</div>
+</body>
+</html>
