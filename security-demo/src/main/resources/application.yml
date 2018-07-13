@@ -1,11 +1,10 @@
 server:
-  port: 8088
-
+  port: 8080
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.01:3306/security?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/security_demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
     druid:
@@ -24,10 +23,13 @@ spring:
       maxOpenPreparedStatements: 20
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000 # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
       use-global-data-source-stat: true # 合并多个DruidDataSource的监控数据
-
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    mode: HTML5
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
-  type-aliases-package: com.example.pojo
+  type-aliases-package: com.example.model
   configuration:
     map-underscore-to-camel-case: true # 开启驼峰式命名
 pagehelper:

@@ -1,17 +1,14 @@
 package com.example.service;
 
-import com.example.entity.SysUser;
+import com.example.model.User;
 
 /**
  * @author SongQingWei
- * @date 2018年06月06 10:32
+ * @date 2018年6月26日 上午10:08:42
  */
 public interface IUserService {
 
-    /**
-     * 通过用户名查询
-     * @param userName 用户名
-     * @return user
-     */
-    SysUser getUserByUserName(String userName);
+	User findByUserName(String userName);
+	
+	void updateSysUserLastLoginTime(User user);
 }
