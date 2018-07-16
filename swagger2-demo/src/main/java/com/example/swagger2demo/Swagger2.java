@@ -23,6 +23,7 @@ import springfox.documentation.spring.web.plugins.Docket;
  *     ApiError ：发生错误返回的信息
  *     ApiImplicitParam：一个请求参数
  *     ApiImplicitParams：多个请求参数
+ * 访问：http://localhost:8080/swagger-ui.html
  * @author SongQingWei
  * @date 2018年07月13 10:02
  */
@@ -47,7 +48,7 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("Spring Boot 测试使用 Swagger2 构建RESTful API")
+                .title("Spring Boot 测试使用 Swagger2 构建RESTFul API")
                 //创建人
                 .contact(new Contact("Song", "http://www.baidu.com", "110110110@qq.com"))
                 //版本号
